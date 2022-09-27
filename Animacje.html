@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang='pl'>
+	<head>
+		<title>Portfolio Rybak Mikołaj</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="icon" type="image/x-icon" href="photo/icon.ico">
+		<link rel="stylesheet" href="https://use.typekit.net/lsq5zdu.css">
+		<script type="text/javascript" src="Scripts/scripts.js"></script>
+	</head>
+	<body id="body">
+		<div id="menu" class="menubox" >
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<ul id="top">
+				<li><a href="index.html"><img src="photo/menu.svg" class="icons"></a></li>
+		</ul>
+		<div id="nav">
+			<ul>
+			<li><a href="Edukacja.html"><img src="photo/education.svg" class="icons"></a></li>
+			<li><a href="Umiejętności.html"><img src="photo/skills.svg" class="icons"></a></li>
+			<li><a href="Zainteresowania.html"><img src="photo/intrests.svg" class="icons"></a></li>
+			<li><a href="Galeria.html"><img src="photo/gallery.svg" class="icons"></a></li>
+			<li><a href="Animacje.html"><img src="photo/animation.svg" class="icons"></a></li>
+			<li><a href="Linki.html"><img src="photo/link.svg" class="icons"></a></li>
+			</ul>
+		</div>
+			
+			
+		</div>
+		<div class="row" >
+			<div class="col-2" id="under">
+				<span style="left:0; position:absolute;font-size:10vh;cursor:pointer;float: left;margin-left:1vh;color:rgb(20, 169, 238);box-shadow: 0 0 2vh rgb(20, 169, 238) ;border-radius:0vh 0vh 1vh 1vh;" onclick="openNav()">&#9776;</span>
+			</div>
+			<div id="bodies" class="col-8">
+			<div class="row">
+			<div id="header" class="col-12">
+				<h1>Animations</h1>
+			</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<hr>
+				</div>
+			</div>
+			<div class="row" id="contentbox">
+				<div class="col-2 blank">
+				</div>
+				<div class="col-8" id="content">
+					<!--<p>Witam, nazywam się Mikołaj Rybak, jestem początkującym grafikiem komputerowym który
+					czerpie ogromna przyjemność z tworzenia nowych ciekawych projektów.</p>-->
+					<P class="title">Portfolio</p>
+				</div>
+				
+				<div class="col-2 blank">
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-12 " >
+				<hr>
+				</div>
+				</div>
+				<div class="slide row">
+				
+					<div class="myslide fade">
+						<div class="row">
+							<div class="col-6 images">
+								<video class="myvideo" width=80% height=100% autoplay controls loop>
+									<source src="movies/tea.mov" >
+								</video>
+							</div>
+							<div class="col-6 images">
+								<video class="myvideo" width=80% height=100% autoplay controls loop>
+									<source src="movies/well.mkv" >
+								</video>
+							</div>
+						</div>
+
+						
+					</div>
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					  <div id="myModal" class="modal">
+						<span class="close">&times;</span>
+						<img class="modal-content" id="img01">
+						<div id="caption"></div>
+					  </div>
+				</div>
+				<div class="row">
+				<div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span>
+				</div>
+				</div>
+				
+				
+				<div class="slidephone row">
+				
+					<div class="myslidephone fade">
+						<div class="row">
+							<div class="col-12 images">
+								<video class="myvideo" width=70% height=100% autoplay controls loop>
+									<source src="movies/tea.mov" >
+								</video>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-12 images">
+								<video class="myvideo" width=70% height=100% autoplay controls loop>
+									<source src="movies/well.mkv" >
+								</video>
+							</div>
+						</div>
+
+						
+					</div>
+					<a class="prev" onclick="plusSlidesphone(-1)">&#10094;</a>
+  					<a class="next" onclick="plusSlidesphone(1)">&#10095;</a>
+					  <div id="myModal" class="modal">
+						<span class="close">&times;</span>
+						<img class="modal-content" id="img01">
+						<div id="caption"></div>
+					  </div>
+				</div>
+				<div class="row">
+				<div style="text-align:center">
+					<span class="dotphone" onclick="currentSlidephone(1)"></span>
+				</div>
+				</div>
+			</div>
+			<div class="col-2" id="over">
+			</div>
+			<div>
+				<img src="photo/logo.png" id="watermark">
+				</div>
+		</div>
+	
+			<script>
+			//Slides on pc
+			let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("myslide");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+  
+ //Slaides on phone
+  let slideIndexphone = 1;
+  showSlidesphone(slideIndexphone);
+  
+  function plusSlidesphone(n) {
+    showSlidesphone(slideIndexphone += n);
+  }
+  
+  function currentSlidephone(n) {
+    showSlidesphone(slideIndexphone = n);
+  }
+  
+  function showSlidesphone(n) {
+    let i;
+    let slidesphone = document.getElementsByClassName("myslidephone");
+    let dotsphone = document.getElementsByClassName("dotphone");
+    if (n > slidesphone.length) {slideIndexphone = 1}
+    if (n < 1) {slideIndexphone = slidesphone.length}
+    for (i = 0; i < slidesphone.length; i++) {
+      slidesphone[i].style.display = "none";
+    }
+    for (i = 0; i < dotsphone.length; i++) {
+      dotsphone[i].className = dotsphone[i].className.replace(" active", "");
+    }
+    slidesphone[slideIndexphone-1].style.display = "block";
+    dotsphone[slideIndexphone-1].className += " active";
+  }
+  
+  
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var images = document.getElementsByClassName("myimages");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  for (var i = 0; i < images.length; i++) {
+    var img = images[i];
+    // and attach our click listener for this image.
+    img.onclick = function(evt) {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+  }
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+		
+			</script>
+		
+	</body>
+</html>
